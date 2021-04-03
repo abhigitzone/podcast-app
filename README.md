@@ -1,4 +1,4 @@
-# podcastcapstone
+# Podcast Capstone Project
 
 ### Summary : 
 
