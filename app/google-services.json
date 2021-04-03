@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "12959908845",
+    "project_id": "podcast-capstone",
+    "storage_bucket": "podcast-capstone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:12959908845:android:8a04202f6f36fa4f94dde4",
+        "android_client_info": {
+          "package_name": "com.example.splash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "12959908845-dpih3lc5u6b7903sfm9qnf7kv8b810eu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuxEI7EGjhTkrJasWe_Dzqra0z-lteIsE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "12959908845-dpih3lc5u6b7903sfm9qnf7kv8b810eu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

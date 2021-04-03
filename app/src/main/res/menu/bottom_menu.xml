@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="@string/home" />
+    <item
+        android:id="@+id/studio"
+        android:icon="@drawable/ic_baseline_library_music_24"
+        android:title="@string/studio" />
+    <item
+        android:id="@+id/account"
+        android:icon="@drawable/ic_baseline_account_circle_24"
+        android:title="@string/account" />
+
+
+</menu>

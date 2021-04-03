@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_20"
+        android:fontFamily="@font/google_sans_bold"
+        android:text="@string/let_s_begin_a_beautiful_journey"
+        android:textColor="@color/darkGreen" />
+
+    <EditText
+        android:id="@+id/regName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_marginStart="@dimen/dp_8"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:layout_marginTop="@dimen/dp_70"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:background="@drawable/edittext_bg"
+        android:drawableStart="@drawable/ic_baseline_account_box_24"
+        android:drawablePadding="@dimen/dp_8"
+        android:hint="@string/full_name"
+        android:inputType="text"
+        android:paddingStart="10dip"
+        android:paddingEnd="26dip" />
+
+
+    <EditText
+        android:id="@+id/regEmail"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/regName"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:background="@drawable/edittext_bg"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="@dimen/dp_8"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:paddingStart="10dip"
+        android:paddingEnd="26dip" />
+
+    <EditText
+        android:id="@+id/regPass"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/regEmail"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:background="@drawable/edittext_bg"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="@dimen/dp_8"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="10dip"
+        android:paddingEnd="26dip" />
+
+    <EditText
+        android:id="@+id/regConfirmPass"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/regPass"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_20"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:background="@drawable/edittext_bg"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:drawableStart="@drawable/ic_baseline_lock_24"
+        android:drawablePadding="@dimen/dp_8"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:paddingStart="10dip"
+        android:paddingEnd="26dip" />
+
+    <CheckBox
+        android:id="@+id/privacy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/regConfirmPass"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_8"
+        android:fontFamily="@font/google_sans_bold"
+        android:buttonTint="@color/darkGreen"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/red" />
+
+    <ProgressBar
+        android:id="@+id/regProgressBar"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@id/privacy"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:indeterminateDrawable="@drawable/progress_bg"
+        android:max="100"
+        android:progress="50"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/register"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_50"
+        android:background="@drawable/button"
+        android:elevation="@dimen/dp_8"
+        android:text="@string/register_now"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

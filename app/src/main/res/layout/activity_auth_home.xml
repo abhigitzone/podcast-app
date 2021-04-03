@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".Authentication.AuthHome">
+
+    <FrameLayout
+        android:id="@+id/frame"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180" />
+
+    <com.denzcoskun.imageslider.ImageSlider
+        android:id="@+id/imageSlider"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_220"
+        app:auto_cycle="true"
+        app:corner_radius="12"
+        app:delay="0"
+        app:error_image="@android:color/white"
+        app:period="2000"
+        app:placeholder="@android:color/white" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/frame"
+        android:background="@drawable/top_curve_background">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabGravity="fill"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabTextColor="@android:color/black" />
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewpager_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/tabLayout_id" />
+
+    </RelativeLayout>
+</RelativeLayout>
