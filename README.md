@@ -8,20 +8,20 @@
 
 ### App basic functionality: 
 
-1. Splash screen : show the starting screen of app also check user authentication state in the backend. 
+1. Splash screen : show the starting screen of app also check user authentication state in the backend.  <br />
 2. Authentication Activity :  Implemented ViewPager, Auto ImageSlider. 
     i) ViewPager : Have Login/Signup interface.
    ii) Auto ImageSlider : External library to auto slide images fetched from the internet.
 
 3. MainActivity/ Dashboard : 
    
-   ○ Side Navigation Bar : Navigation Header, user background, User name & User Image (fetched from firebase), List of Menu items.
-   ○ Navigation Menu : Explore, Category, Favorite, Share, Language, Feedback, About.
-   ○ Toolbar : Title, Notification, Search.
-   ○ Bottom Navigation Bar : HOME, STUDIO, ACCOUNT 
-       ⁍ Home     : Contains List of podcast fetched from API. 
-       ⁍ Studio   : Publish custom podcast, Ask user to enter Title, Podcast background Image, Podcast Audio and Publish Button. 
-       ⁍ Account  : User personal information. 
+   ○ Side Navigation Bar : Navigation Header, user background, User name & User Image (fetched from firebase), List of Menu items. <br />
+   ○ Navigation Menu : Explore, Category, Favorite, Share, Language, Feedback, About. <br />
+   ○ Toolbar : Title, Notification, Search. <br />
+   >○ Bottom Navigation Bar : HOME, STUDIO, ACCOUNT  <br />
+       >> Home     : Contains List of podcast fetched from API.  <br />
+       >> Studio   : Publish custom podcast, Ask user to enter Title, Podcast background Image, Podcast Audio and Publish Button. <br /> 
+       >> Account  : User personal information. <br />
 
 
 
