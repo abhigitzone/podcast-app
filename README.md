@@ -35,3 +35,13 @@
 6. Have to implement search functionality. 
 7. Have to implement Notification functionality for : User Engagement i.e : Like 
 8. Have to decide overall UI of the app. 
+
+#### ScreenShot : 
+
+![Screenshot_2021-04-03-18-17-28-93_9a2e68e75b9e8b113caa084d61394c38](https://user-images.githubusercontent.com/19603894/113479029-20c40300-94aa-11eb-896e-8d809a10da28.jpg)
+![Screenshot_2021-04-03-18-17-41-86_9a2e68e75b9e8b113caa084d61394c38](https://user-images.githubusercontent.com/19603894/113479031-2588b700-94aa-11eb-88cc-11b5b0645cd8.jpg)
+![Screenshot_2021-04-03-18-18-00-55_9a2e68e75b9e8b113caa084d61394c38](https://user-images.githubusercontent.com/19603894/113479023-14d84100-94aa-11eb-8f87-546959c058c6.jpg)
+![Screenshot_2021-04-03-18-17-56-65_9a2e68e75b9e8b113caa084d61394c38](https://user-images.githubusercontent.com/19603894/113479035-29b4d480-94aa-11eb-8b56-4ec4960e4046.jpg)
+
+
+
