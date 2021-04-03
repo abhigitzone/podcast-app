@@ -18,7 +18,7 @@
    ○ Side Navigation Bar : Navigation Header, user background, User name & User Image (fetched from firebase), List of Menu items. <br />
    ○ Navigation Menu : Explore, Category, Favorite, Share, Language, Feedback, About. <br />
    ○ Toolbar : Title, Notification, Search. <br />
-   >○ Bottom Navigation Bar : HOME, STUDIO, ACCOUNT  <br />
+   ○ Bottom Navigation Bar : HOME, STUDIO, ACCOUNT  <br />
        >> Home     : Contains List of podcast fetched from API.  <br />
        >> Studio   : Publish custom podcast, Ask user to enter Title, Podcast background Image, Podcast Audio and Publish Button. <br /> 
        >> Account  : User personal information. <br />
