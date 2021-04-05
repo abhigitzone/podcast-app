@@ -5,14 +5,16 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/home" />
+
+    <item
+        android:id="@+id/categories"
+        android:icon="@drawable/ic_baseline_category_24"
+        android:title="@string/search_by_categories" />
+
     <item
         android:id="@+id/studio"
-        android:icon="@drawable/ic_baseline_library_music_24"
+        android:icon="@drawable/ic_baseline_settings_24"
         android:title="@string/studio" />
-    <item
-        android:id="@+id/account"
-        android:icon="@drawable/ic_baseline_account_circle_24"
-        android:title="@string/account" />
 
 
 </menu>

@@ -13,11 +13,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.splash.Model.HomeData;
 import com.example.splash.R;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapter.MyViewHolder> {
 
@@ -44,12 +42,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
         Glide.with(mContext).load(mUrls.get(position)).apply(requestOptions).into(holder.podImg);
 
         holder.podTitle.setText(mNames.get(position));
-        holder.podImg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, mNames.get(position), Toast.LENGTH_SHORT).show();
-            }
-        });
+        holder.podImg.setOnClickListener(v -> Toast.makeText(mContext, mNames.get(position), Toast.LENGTH_SHORT).show());
     }
 
     @Override

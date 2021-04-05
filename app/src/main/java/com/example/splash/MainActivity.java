@@ -15,10 +15,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.splash.Fragments.AccountFragment;
-import com.example.splash.Fragments.ExploreFragment;
+import com.example.splash.Fragments.CategoryFragment;
 import com.example.splash.Fragments.HomeFragment;
-import com.example.splash.Fragments.LibraryFragment;
+import com.example.splash.Fragments.StudioFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -40,14 +39,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
         toolbar.setTitle(getString(R.string.app_name));
 
-        //Assigning Id for bottom music controller and opening intent..
-        bottomMusic = findViewById(R.id.bottom_music);
-        bottomMusic.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, MusicController.class));
-            }
-        });
+        //Change statusBar text color..
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
 
         //Bottom navigation bar.
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
@@ -80,13 +73,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     selectedFragment = new HomeFragment();
                     toolbar.setTitle(getString(R.string.app_name));
                     break;
-                case R.id.studio:
-                    selectedFragment = new LibraryFragment();
-                    toolbar.setTitle(getString(R.string.studio));
+                case R.id.categories:
+                    //Add fragments here..
+                    selectedFragment = new CategoryFragment();
+                    toolbar.setTitle(getString(R.string.category));
                     break;
-                case R.id.account:
-                    selectedFragment = new AccountFragment();
-                    toolbar.setTitle(getString(R.string.account));
+                case R.id.studio:
+                    selectedFragment = new StudioFragment();
+                    toolbar.setTitle(getString(R.string.studio));
                     break;
             }
             assert selectedFragment != null;
@@ -103,13 +97,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = menuItem.getItemId();
         switch (id) {
             case R.id.explore:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ExploreFragment()).commit();
-                toolbar.setTitle(getString(R.string.explore));
+                startActivity(new Intent(MainActivity.this, ExploreActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 break;
-            case R.id.categories:
-                //Add fragments here..
-                Toast.makeText(this, "Have to build fragment for it..", Toast.LENGTH_SHORT).show();
-                toolbar.setTitle(getString(R.string.category));
+            case R.id.account:
+                startActivity(new Intent(MainActivity.this, AccountProfile.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                toolbar.setTitle(getString(R.string.account));
                 break;
             case R.id.favourite:
                 Toast.makeText(this, "We are working upon it..", Toast.LENGTH_LONG).show();
@@ -134,9 +128,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getMenuInflater().inflate(R.menu.option_menu, menu);
         return true;
     }
+
     //On option menu click..
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();

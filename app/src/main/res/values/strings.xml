@@ -2,10 +2,10 @@
     <string name="app_name">Podcast</string>
     <string name="home">Home</string>
     <string name="library">Library</string>
-    <string name="account">Account</string>
+    <string name="account">Profile</string>
     <string name="hello_there">Hello, Abhishek</string>
     <string name="explore">Explore</string>
-    <string name="search_by_categories">Search by Categories</string>
+    <string name="search_by_categories">Categories</string>
     <string name="favourite">Favourite</string>
     <string name="other">Other</string>
     <string name="share">Share</string>
@@ -41,4 +41,12 @@
     <string name="logout">Logout</string>
     <string name="studio">Studio</string>
     <string name="open_album">Open Album</string>
+    <string name="sample_bio">|| Android Application Developer || WanderLust\n|| Music and Code ❤ ||</string>
+    <string name="accountEmail">podcastdevteam@gmail.com</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="save">Save</string>
+    <string name="name">Name</string>
+    <string name="bio">Bio</string>
+    <string name="location">Location</string>
+    <string name="website">Website</string>
 </resources>

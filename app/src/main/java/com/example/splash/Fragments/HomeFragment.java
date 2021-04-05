@@ -61,8 +61,8 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://wi-images.condecdn.net/image/ok97VNKObJZ/crop/900/f/https___contentproductioncdnart19com_images_9d_ab_7e_ff_9dab7eff-1931-4f98-b4d0-50d7ab3da2d8_6352c0552420a9cbfdd9587b1280209a9f32d52459a7909b0b4358fd0f82a627a3312f9263fc5c89da0d4077911ae0b7ffbf06487e43e877f867ac1f9dab5a05.jpg");
         mNames.add("Dead Eyes");
 
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/american-fiasco-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("American fiasco");
+        mImageUrls.add("https://wi-images.condecdn.net/image/8geXmVlwjB1/crop/900/f/screenshot.jpg");
+        mNames.add("UnEarthen");
 
         mImageUrls.add("https://wi-images.condecdn.net/image/2Yy7BRYDArZ/crop/600/f/static1squarespace.jpg");
         mNames.add("Always Takes Notes");
@@ -76,47 +76,12 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/bear-brook-best-podcasts-2019.jpg?w=800&quality=85");
         mNames.add("Bear brook");
 
-        mImageUrls.add("https://wi-images.condecdn.net/image/8geXmVlwjB1/crop/900/f/screenshot.jpg");
-        mNames.add("UnEarthen");
-
         mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/believed-best-podcasts-2019.jpg?w=800&quality=85");
         mNames.add("Believed");
 
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/the-drop-out-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("The Drop out");
+        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/american-fiasco-best-podcasts-2019.jpg?w=800&quality=85");
+        mNames.add("American fiasco");
 
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/12/best_podcasts_thebigone.jpg?w=800&quality=85");
-        mNames.add("The Big One");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/12/best_podcasts_the_birth_hour.jpg?w=800&quality=85");
-        mNames.add("The Birth Hour");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/black-men-cant-jump-in-hollywood-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("Black Man Can't Jump");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/bodies-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("Bodies");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/caught-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("Caught");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/12/best_podcasts_theclearing.jpg?w=800&quality=85");
-        mNames.add("The Clearing");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/cocaine-rhinestones-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("Cocaine and Rhinestones");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/code-switch-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("Code Switch");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/12/best_podcasts_dolly_partons_america.jpg?w=800&quality=85");
-        mNames.add("Dolly Parton");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/the-dream-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("The Dreams");
-
-        mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/everything-is-alive-best-podcasts-2019.jpg?w=800&quality=85");
-        mNames.add("Everything is Alive");
 
     }
 

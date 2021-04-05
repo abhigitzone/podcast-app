@@ -12,7 +12,16 @@
         android:roundIcon="@drawable/app_icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MusicController" android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".EditProfile"
+            android:parentActivityName=".AccountProfile" />
+        <activity
+            android:name=".AccountProfile"
+            android:screenOrientation="portrait"
+            android:theme="@style/ThemeFullScreen" />
+        <activity
+            android:name=".ExploreActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".Authentication.AuthHome"
             android:screenOrientation="portrait"

@@ -14,15 +14,4 @@
         android:scaleType="fitCenter"
         android:src="@drawable/app_icon" />
 
-    <TextView
-        android:id="@+id/app_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/appIcon"
-        android:layout_centerHorizontal="true"
-        android:text="Podcast"
-        android:textColor="@color/red"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
 </RelativeLayout>
