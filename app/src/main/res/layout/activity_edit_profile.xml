@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/EditToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:elevation="@dimen/dp_4"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:theme="@style/ToolbarTheme"
+        app:title="@string/edit_profile"
+        app:titleTextColor="@android:color/black" />
+
+    <ProgressBar
+        android:id="@+id/saveProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_4"
+        android:layout_below="@id/EditToolbar"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/red"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/coverContainer"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_below="@id/EditToolbar">
+
+        <ImageView
+            android:id="@+id/chooseImg"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:layout_centerInParent="true"
+            android:src="@drawable/upload_image" />
+
+        <ImageView
+            android:id="@+id/coverImg"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:alpha=".4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cover_img" />
+
+    </RelativeLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/EditProfileImg"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_below="@id/coverContainer"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="-25dp"
+        android:alpha="0.7"
+        android:src="@drawable/protrait_shimla"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp" />
+
+    <ImageView
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@id/coverContainer"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_toEndOf="@id/EditProfileImg"
+        android:alpha="0.8"
+        android:src="@drawable/upload_image" />
+
+    <!--Name container-->
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EditProfileImg"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:text="@string/name"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/EditName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/txtName"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/edittext_bg_square"
+        android:hint="Name cannot be blank"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="@dimen/sp_16" />
+
+    <!--Bio container-->
+
+    <TextView
+        android:id="@+id/txtBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EditName"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:text="@string/bio"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/EditBio"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/txtBio"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/edittext_bg_square"
+        android:hint="Bio cannot be blank"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="@dimen/sp_16" />
+
+    <!--Location Container-->
+
+    <TextView
+        android:id="@+id/txtLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EditBio"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:text="@string/location"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/EditLocation"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/txtLocation"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/edittext_bg_square"
+        android:hint="Location cannot be blank"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="@dimen/sp_16" />
+
+    <!--Website Container-->
+
+    <TextView
+        android:id="@+id/TxtWebsite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EditLocation"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:text="@string/website"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/EditWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/TxtWebsite"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/edittext_bg_square"
+        android:hint="Provide website if any"
+        android:paddingStart="@dimen/dp_8"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="@dimen/sp_16" />
+
+    <Button
+        android:id="@+id/saveEditBtn"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/dp_30"
+        android:background="@drawable/button"
+        android:elevation="@dimen/dp_8"
+        android:text="@string/save"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+</RelativeLayout>

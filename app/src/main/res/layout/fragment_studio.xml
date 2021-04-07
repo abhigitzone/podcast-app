@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <VideoView
+        android:id="@+id/studioVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_220"
+        android:backgroundTint="@color/button" />
+
+    <EditText
+        android:id="@+id/videoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/studioVideoView"
+        android:layout_margin="@dimen/dp_8"
+        android:autoText="true"
+        android:background="@drawable/edittext_bg"
+        android:hint="Video Title"
+        android:paddingStart="10dip" />
+
+    <TextView
+        android:id="@+id/chooseVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/videoTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="choose Video"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/showVideo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/chooseVideo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_20"
+        android:text="Review Video"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/publishVideo"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/showVideo"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_20"
+        android:fontFamily="@font/google_sans_bold"
+        android:background="@drawable/button"
+        android:text="Publish Video"
+        android:textColor="@color/colorAccent" />
+
+    <ProgressBar
+        android:id="@+id/studioProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/publishVideo"
+        android:indeterminate="true"
+        android:indeterminateTint="@android:color/holo_orange_dark"
+        android:visibility="gone" />
+</RelativeLayout>

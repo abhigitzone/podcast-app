@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--User Main Account-->
+
+    <ImageView
+        android:id="@+id/coverImg"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover_img" />
+
+    <ImageView
+        android:id="@+id/backBtn"
+        android:layout_width="@dimen/dp_30"
+        android:layout_height="@dimen/dp_30"
+        android:layout_marginStart="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_40"
+        android:alpha="0.35"
+        android:src="@drawable/previous" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profileImg"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="@dimen/dp_80"
+        android:layout_below="@id/coverImg"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="-25dp"
+        android:src="@drawable/protrait_shimla"
+        app:civ_border_color="@color/colorAccent"
+        app:civ_border_width="3dp" />
+
+    <TextView
+        android:id="@+id/accountName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/profileImg"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_4"
+        android:fontFamily="@font/google_sans_bold"
+        android:text="Abhishek Raj"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_22"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/accountEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountName"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/accountEmail"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/sp_16" />
+
+    <TextView
+        android:id="@+id/accountBio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountEmail"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_4"
+        android:text="@string/sample_bio"
+        android:textColor="@color/black"
+        android:textSize="@dimen/sp_16" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@id/accountBio"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_8"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@color/black" />
+
+    <Button
+        android:id="@+id/accountEdit"
+        android:layout_width="@dimen/dp_120"
+        android:layout_height="@dimen/dp_35"
+        android:layout_below="@id/coverImg"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="8dp"
+        android:background="@drawable/button_transparent"
+        android:text="@string/edit_profile"
+        android:textAllCaps="false"
+        android:textColor="@color/grey"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="@dimen/dp_250"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/dp_70"
+        android:background="@drawable/button"
+        android:text="@string/logout"
+        android:textColor="@android:color/white" />
+
+</RelativeLayout>
