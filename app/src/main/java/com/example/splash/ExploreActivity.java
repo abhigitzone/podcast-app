@@ -91,7 +91,6 @@ public class ExploreActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         } else if (item.getItemId() == R.id.notification) {
             Toast.makeText(this, "under development", Toast.LENGTH_SHORT).show();
         } else {
@@ -102,4 +101,9 @@ public class ExploreActivity extends AppCompatActivity {
 
     //TODO:// Have to implement onBackPressed to stop playing video from exoplayer
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+    }
 }

@@ -33,7 +33,6 @@ public class AccountProfile extends AppCompatActivity {
         backBtn = findViewById(R.id.backBtn);
         backBtn.setOnClickListener(v -> {
             onBackPressed();
-            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
 
         accountEdit = findViewById(R.id.accountEdit);
@@ -52,5 +51,11 @@ public class AccountProfile extends AppCompatActivity {
             Toast.makeText(this, "Logout successfully", Toast.LENGTH_SHORT).show();
         });
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }
