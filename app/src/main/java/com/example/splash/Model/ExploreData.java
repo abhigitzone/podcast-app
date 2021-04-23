@@ -3,8 +3,17 @@ package com.example.splash.Model;
 public class ExploreData {
     String title;
     String url;
+    String author;
 
     public ExploreData() {
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getTitle() {

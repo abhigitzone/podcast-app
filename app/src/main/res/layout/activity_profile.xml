@@ -7,9 +7,9 @@
     <!--User Main Account-->
 
     <ImageView
-        android:id="@+id/coverImg"
+        android:id="@+id/profileCoverImg"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="170dp"
         android:scaleType="centerCrop"
         android:src="@drawable/cover_img" />
 
@@ -26,10 +26,10 @@
         android:id="@+id/profileImg"
         android:layout_width="@dimen/dp_80"
         android:layout_height="@dimen/dp_80"
-        android:layout_below="@id/coverImg"
+        android:layout_below="@id/profileCoverImg"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="-25dp"
-        android:src="@drawable/protrait_shimla"
+        android:src="@drawable/default_profile_img"
         app:civ_border_color="@color/colorAccent"
         app:civ_border_width="3dp" />
 
@@ -64,30 +64,87 @@
         android:layout_below="@id/accountEmail"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_4"
+        android:ellipsize="end"
         android:text="@string/sample_bio"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_16" />
 
+    <LinearLayout
+        android:id="@+id/linearLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountWebsite"
+        android:layout_marginTop="@dimen/dp_4"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/accountLocation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_4"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@string/location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:drawableStartCompat="@drawable/ic_baseline_location_on_24" />
+
+        <TextView
+            android:id="@+id/accountDOB"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dp_12"
+            android:layout_marginTop="@dimen/dp_4"
+            android:layout_weight="1"
+            android:drawablePadding="@dimen/dp_4"
+            android:text="@string/dob"
+            android:textColor="@color/black"
+            android:textSize="@dimen/sp_16"
+            app:drawableStartCompat="@drawable/ic_baseline_child_care_24" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/accountWebsite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/accountBio"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_4"
+        android:autoLink="web"
+        android:drawablePadding="@dimen/dp_4"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="@string/website"
+        android:textColor="@color/black"
+        android:textColorLink="@color/button"
+        android:textSize="@dimen/sp_16"
+        app:drawableStartCompat="@drawable/ic_baseline_language_24" />
+
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="2dp"
-        android:layout_below="@id/accountBio"
+        android:layout_below="@id/linearLL"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_8"
         android:layout_marginEnd="@dimen/dp_12"
-        android:background="@color/black" />
+        android:background="@color/grey" />
 
     <Button
         android:id="@+id/accountEdit"
         android:layout_width="@dimen/dp_120"
         android:layout_height="@dimen/dp_35"
-        android:layout_below="@id/coverImg"
+        android:layout_below="@id/profileCoverImg"
         android:layout_alignParentEnd="true"
         android:layout_margin="8dp"
         android:background="@drawable/button_transparent"
         android:text="@string/edit_profile"
         android:textAllCaps="false"
-        android:textColor="@color/grey"
+        android:textColor="@color/button"
         android:textStyle="bold" />
 
     <Button

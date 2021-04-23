@@ -12,16 +12,16 @@
         android:src="@color/dark_grey" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/img"
+        android:id="@+id/userImg"
         android:layout_width="@dimen/dp_50"
         android:layout_height="@dimen/dp_50"
         android:layout_above="@id/userNm"
         android:layout_marginStart="@dimen/dp_8"
         android:layout_marginBottom="@dimen/dp_8"
-        android:src="@drawable/protrait_shimla" />
+        android:src="@drawable/default_profile_img" />
 
     <TextView
-        android:id="@+id/userNm"
+        android:id="@+id/userNmHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -32,5 +32,17 @@
         android:textColor="@android:color/black"
         android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/userNm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/dp_8"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_toEndOf="@id/userNmHeader"
+        android:fontFamily="@font/google_sans_bold"
+        android:text="User"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
 </RelativeLayout>

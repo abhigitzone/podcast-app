@@ -43,11 +43,13 @@ public class ViewHolder extends RecyclerView.ViewHolder {
         mView = itemView;
     }
 
-    public void setVideo(final Application ctx, String title, final String url) {
+    public void setVideo(final Application ctx, String title, final String url, String author) {
         TextView mTextView = mView.findViewById(R.id.Titletv);
+        TextView mAuthor = mView.findViewById(R.id.Authortv);
         playerView = mView.findViewById(R.id.exoplayerView);
 
         mTextView.setText(title);
+        mAuthor.setText(author);
         Uri video = Uri.parse(url);
         try {
             BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter.Builder(ctx).build();

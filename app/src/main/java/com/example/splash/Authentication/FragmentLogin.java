@@ -77,7 +77,7 @@ public class FragmentLogin extends Fragment {
                                     getActivity().finish();
                                 }
                             } else {
-                                Toast.makeText(getContext(), getString(R.string.EmailVer), Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getContext(), "Error while login", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                             }
                         }

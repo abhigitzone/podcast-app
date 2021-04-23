@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.splash.Exoplayer.ViewHolder;
@@ -29,8 +30,8 @@ public class ExploreActivity extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase;
     DatabaseReference mDatabaseReferences;
     RecyclerView recyclerView;
-
     Toolbar toolbar;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +66,13 @@ public class ExploreActivity extends AppCompatActivity {
         FirebaseRecyclerAdapter<ExploreData, ViewHolder> firebaseRecyclerAdapter = new FirebaseRecyclerAdapter<ExploreData, ViewHolder>(options) {
             @Override
             protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull ExploreData model) {
-                holder.setVideo(getApplication(), model.getTitle(), model.getUrl());
+                holder.setVideo(getApplication(), model.getTitle(), model.getUrl(), model.getAuthor());
             }
 
             @NonNull
             @Override
             public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                //progressBar.setVisibility(View.GONE);
                 View view = LayoutInflater.from(getApplicationContext()).inflate(R.layout.explore_video_sample, parent, false);
                 return new ViewHolder(view);
             }

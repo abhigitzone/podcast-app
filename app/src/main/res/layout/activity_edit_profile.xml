@@ -26,77 +26,25 @@
         android:indeterminateTint="@color/red"
         android:visibility="gone" />
 
-    <RelativeLayout
-        android:id="@+id/coverContainer"
+    <ImageView
+        android:id="@+id/chooseCoverImg"
         android:layout_width="match_parent"
         android:layout_height="150dp"
-        android:layout_below="@id/EditToolbar">
-
-        <ImageView
-            android:id="@+id/chooseImg"
-            android:layout_width="@dimen/dp_40"
-            android:layout_height="@dimen/dp_40"
-            android:layout_centerInParent="true"
-            android:src="@drawable/upload_image" />
-
-        <ImageView
-            android:id="@+id/coverImg"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:alpha=".4"
-            android:scaleType="centerCrop"
-            android:src="@drawable/cover_img" />
-
-    </RelativeLayout>
+        android:layout_below="@id/EditToolbar"
+        android:alpha=".4"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cover_img" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/EditProfileImg"
         android:layout_width="@dimen/dp_80"
         android:layout_height="@dimen/dp_80"
-        android:layout_below="@id/coverContainer"
+        android:layout_below="@id/chooseCoverImg"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="-25dp"
-        android:alpha="0.7"
-        android:src="@drawable/protrait_shimla"
+        android:src="@drawable/ic_baseline_account_circle_24"
         app:civ_border_color="@color/colorAccent"
         app:civ_border_width="3dp" />
-
-    <ImageView
-        android:layout_width="@dimen/dp_30"
-        android:layout_height="@dimen/dp_30"
-        android:layout_below="@id/coverContainer"
-        android:layout_marginStart="-30dp"
-        android:layout_marginTop="@dimen/dp_30"
-        android:layout_toEndOf="@id/EditProfileImg"
-        android:alpha="0.8"
-        android:src="@drawable/upload_image" />
-
-    <!--Name container-->
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/EditProfileImg"
-        android:layout_marginStart="@dimen/dp_12"
-        android:layout_marginTop="@dimen/dp_12"
-        android:layout_marginBottom="@dimen/dp_8"
-        android:text="@string/name"
-        android:textSize="@dimen/sp_16"
-        android:textStyle="bold" />
-
-    <EditText
-        android:id="@+id/EditName"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_40"
-        android:layout_below="@id/txtName"
-        android:layout_marginStart="@dimen/dp_8"
-        android:layout_marginEnd="@dimen/dp_12"
-        android:background="@drawable/edittext_bg_square"
-        android:hint="Name cannot be blank"
-        android:paddingStart="@dimen/dp_8"
-        android:textColor="@color/black"
-        android:textCursorDrawable="@drawable/cursor_color"
-        android:textSize="@dimen/sp_16" />
 
     <!--Bio container-->
 
@@ -104,7 +52,7 @@
         android:id="@+id/txtBio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/EditName"
+        android:layout_below="@id/EditProfileImg"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_12"
         android:layout_marginBottom="@dimen/dp_8"
@@ -121,7 +69,35 @@
         android:layout_marginEnd="@dimen/dp_12"
         android:background="@drawable/edittext_bg_square"
         android:hint="Bio cannot be blank"
-        android:paddingStart="@dimen/dp_8"
+        android:padding="@dimen/dp_8"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@drawable/cursor_color"
+        android:textSize="@dimen/sp_16" />
+
+    <!--DOB container-->
+    <TextView
+        android:id="@+id/txtDOB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/EditBio"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:layout_marginBottom="@dimen/dp_8"
+        android:text="@string/dob"
+        android:textSize="@dimen/sp_16"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/EditDOB"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_below="@id/txtDOB"
+        android:layout_marginStart="@dimen/dp_8"
+        android:maxLength="10"
+        android:layout_marginEnd="@dimen/dp_12"
+        android:background="@drawable/edittext_bg_square"
+        android:hint="DD-month"
+        android:padding="@dimen/dp_8"
         android:textColor="@color/black"
         android:textCursorDrawable="@drawable/cursor_color"
         android:textSize="@dimen/sp_16" />
@@ -132,7 +108,7 @@
         android:id="@+id/txtLocation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/EditBio"
+        android:layout_below="@id/EditDOB"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_12"
         android:layout_marginBottom="@dimen/dp_8"
@@ -149,7 +125,7 @@
         android:layout_marginEnd="@dimen/dp_12"
         android:background="@drawable/edittext_bg_square"
         android:hint="Location cannot be blank"
-        android:paddingStart="@dimen/dp_8"
+        android:padding="@dimen/dp_8"
         android:textColor="@color/black"
         android:textCursorDrawable="@drawable/cursor_color"
         android:textSize="@dimen/sp_16" />
@@ -177,7 +153,7 @@
         android:layout_marginEnd="@dimen/dp_12"
         android:background="@drawable/edittext_bg_square"
         android:hint="Provide website if any"
-        android:paddingStart="@dimen/dp_8"
+        android:padding="@dimen/dp_8"
         android:textColor="@color/black"
         android:textCursorDrawable="@drawable/cursor_color"
         android:textSize="@dimen/sp_16" />
