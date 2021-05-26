@@ -9,7 +9,7 @@
 
     </style>
 
-    <!-- Change drawer Icon Color Change -->
+    <!-- Change drawer Icon Color -->
     <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
         <item name="color">@android:color/black</item>
     </style>
@@ -29,6 +29,15 @@
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <!-- Customize color of navigation drawer icon and back arrow -->
         <item name="colorControlNormal">@android:color/black</item>
+    </style>
+
+    <!--This style is used for doing bottom sheet rounded.-->
+    <style name="BottomSheetDialogTheme" parent="Theme.Design.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/background</item>
+    </style>
+
+    <style name="background" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@android:color/transparent</item>
     </style>
 
 </resources>

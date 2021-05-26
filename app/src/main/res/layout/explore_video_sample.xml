@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/dp_4"
     app:cardCornerRadius="@dimen/dp_8"
-    app:cardElevation="@dimen/dp_8">
+    app:cardElevation="@dimen/dp_8"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -25,7 +27,7 @@
                 app:resize_mode="fit" />
 
             <RelativeLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/dp_4">
 
@@ -35,42 +37,55 @@
                     android:layout_height="@dimen/dp_40"
                     android:layout_centerVertical="true"
                     android:layout_margin="@dimen/dp_8"
-                    android:src="@drawable/ic_baseline_account_circle_24" />
+                    android:src="@drawable/default_profile_img" />
 
-                <TextView
-                    android:id="@+id/Titletv"
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:id="@+id/ll"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
                     android:layout_marginStart="@dimen/dp_8"
                     android:layout_marginTop="@dimen/dp_8"
                     android:layout_toEndOf="@id/exploreUserImg"
-                    android:text="Title"
-                    android:textColor="@android:color/black"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:baselineAligned="false"
+                    android:orientation="vertical">
 
-                <TextView
-                    android:id="@+id/Authortv"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/Titletv"
-                    android:layout_marginStart="@dimen/dp_8"
-                    android:layout_marginBottom="@dimen/dp_2"
-                    android:layout_toEndOf="@id/exploreUserImg"
-                    android:text="author"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/sp_16"
-                    android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/Titletv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="@android:color/black"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        tools:text="Title" />
+
+                    <TextView
+                        android:id="@+id/Authortv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/dp_2"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/sp_12"
+                        android:textStyle="italic"
+                        tools:text="author" />
+
+                </LinearLayout>
 
                 <com.like.LikeButton
-                    android:id="@+id/star_button"
-                    android:layout_width="@dimen/dp_40"
-                    android:layout_height="@dimen/dp_30"
+                    android:id="@+id/vector_android_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
-                    android:layout_centerInParent="true"
-                    android:layout_marginEnd="@dimen/dp_20"
-                    app:icon_size="20dp"
-                    app:icon_type="heart" />
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    app:circle_end_color="@android:color/holo_orange_dark"
+                    app:circle_start_color="@android:color/holo_orange_dark"
+                    app:dots_primary_color="@android:color/holo_red_dark"
+                    app:dots_secondary_color="@android:color/holo_orange_dark"
+                    app:icon_size="22dp"
+                    app:like_drawable="@drawable/ic_baseline_favorite_24"
+                    app:unlike_drawable="@drawable/heart_uncheck"
+                    tools:ignore="RelativeOverlap" />
 
             </RelativeLayout>
 

@@ -4,5 +4,5 @@
     android:duration="2000"
     android:fromAlpha="0.0"
     android:toAlpha="1.0">
-
+    <!--2000 ms ~ 2 sec-->
 </alpha>

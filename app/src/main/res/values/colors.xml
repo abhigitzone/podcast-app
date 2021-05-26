@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--Main app color-->
-    <color name="colorPrimary">@color/dark_grey</color>
-    <color name="colorPrimaryDark">@color/dark_grey</color>
-    <color name="colorAccent">@android:color/white</color>
+    <color name="colorPrimary">@color/grey</color>
+    <color name="colorPrimaryDark">@color/grey</color>
+    <color name="colorAccent">@color/orange</color>
     <!--Secondary color-->
     <color name="black">#242B2E</color>
-    <color name="grey">#5b5b5b</color>
-    <color name="dark_grey">#E1E8ED</color>
+    <color name="dark_grey">#5b5b5b</color>
+    <color name="grey">#E1E8ED</color>
     <color name="darkGreen">#1f441e</color>
-    <color name="button">#38CC77</color>
-    <color name="light_green">#e7e7de</color>
+    <color name="green">#38CC77</color>
+    <color name="soft_white">#e7e7de</color>
     <color name="red">#c15050</color>
     <color name="colorWhite">#FFFFFF</color>
+
+    <color name="yellow">#F4BE2C</color>
+    <color name="light_yellow">#ffd384</color>
+    <color name="light_pink">#f1d1d0</color>
+    <color name="orange">#e2703a</color>
+
 </resources>

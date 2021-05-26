@@ -13,12 +13,16 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
+import com.example.splash.Fragments.FragmentAbout;
 import com.example.splash.MainActivity;
 import com.example.splash.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -30,6 +34,8 @@ public class FragmentLogin extends Fragment {
     Button login;
     TextView forgetPass;
     ProgressBar progressBar;
+
+    FloatingActionButton phoneLogin;
 
     //Firebase Authentication...
     FirebaseAuth mFirebaseAuth;
@@ -50,39 +56,52 @@ public class FragmentLogin extends Fragment {
         loginPass = view.findViewById(R.id.loginPass);
         forgetPass = view.findViewById(R.id.forgetPass);
         progressBar = view.findViewById(R.id.progressBar);
+        phoneLogin = view.findViewById(R.id.phoneLogin);
 
-        mFirebaseAuth = FirebaseAuth.getInstance();
+        mFirebaseAuth = FirebaseAuth.getInstance(); //Entry point into database..
+
+        phoneLogin.setOnClickListener(view1 -> {
+            Toast.makeText(getActivity(), "Feature not implemented", Toast.LENGTH_SHORT).show();
+        });
+
 
         //Handling login stuff..
-        login.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(v -> {
+            String emailLogin = loginEmail.getText().toString().trim();
+            String passLogin = loginPass.getText().toString().trim();
+            progressBar.setVisibility(View.VISIBLE);
+            if (emailLogin.isEmpty()) {
+                loginEmail.setError(getString(R.string.mandatory));
+                progressBar.setVisibility(View.INVISIBLE);
+            } else if (passLogin.isEmpty()) {
+                loginPass.setError(getString(R.string.mandatory));
+                progressBar.setVisibility(View.INVISIBLE);
+            } else {
+                mFirebaseAuth.signInWithEmailAndPassword(emailLogin, passLogin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            if (Objects.requireNonNull(mFirebaseAuth.getCurrentUser()).isEmailVerified()) {
+                                startActivity(new Intent(getActivity(), MainActivity.class));
+                                Objects.requireNonNull(getActivity()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                                getActivity().finish();
+                            }
+                        } else {
+                            Toast.makeText(getContext(), "Error while login", Toast.LENGTH_SHORT).show();
+                            progressBar.setVisibility(View.GONE);
+                        }
+                    }
+                });
+            }
+        });
+
+        //Forget Password Handles..
+        forgetPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String emailLogin = loginEmail.getText().toString().trim();
-                String passLogin = loginPass.getText().toString().trim();
-                progressBar.setVisibility(View.VISIBLE);
-                if (emailLogin.isEmpty()) {
-                    loginEmail.setError(getString(R.string.mandatory));
-                    progressBar.setVisibility(View.INVISIBLE);
-                } else if (passLogin.isEmpty()) {
-                    loginPass.setError(getString(R.string.mandatory));
-                    progressBar.setVisibility(View.INVISIBLE);
-                } else {
-                    mFirebaseAuth.signInWithEmailAndPassword(emailLogin, passLogin).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                if (Objects.requireNonNull(mFirebaseAuth.getCurrentUser()).isEmailVerified()) {
-                                    startActivity(new Intent(getActivity(), MainActivity.class));
-                                    Objects.requireNonNull(getActivity()).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                                    getActivity().finish();
-                                }
-                            } else {
-                                Toast.makeText(getContext(), "Error while login", Toast.LENGTH_SHORT).show();
-                                progressBar.setVisibility(View.GONE);
-                            }
-                        }
-                    });
-                }
+                BottomSheetDialogFragment bottomSheetDialogFragment = new FragmentForgetPass();
+                bottomSheetDialogFragment.show(getChildFragmentManager(), "Forget password");
+                bottomSheetDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.BottomSheetDialogTheme); //for transparent background
             }
         });
     }

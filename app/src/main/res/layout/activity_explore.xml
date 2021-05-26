@@ -21,16 +21,15 @@
         app:titleTextColor="@android:color/black" />
 
     <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="@dimen/dp_60"
-        android:layout_height="@dimen/dp_60"
-        android:layout_centerInParent="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="@dimen/dp_20"
-        android:indeterminateDrawable="@drawable/progress_bg"
-        android:max="100"
-        android:progress="50"
-        android:visibility="visible" />
+        android:id="@+id/exploreProgress"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_4"
+        android:layout_marginTop="-2dp"
+        android:layout_below="@id/exploreToolbar"
+        android:indeterminate="true"
+        android:visibility="visible"
+        android:indeterminateTint="@color/red" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerExplore"

@@ -20,6 +20,11 @@
             android:icon="@drawable/ic_baseline_favorite_24"
             android:title="@string/favourite" />
 
+        <item
+            android:id="@+id/chat"
+            android:icon="@drawable/ic_baseline_chat_24"
+            android:title="@string/message" />
+
     </group>
 
     <item android:title="@string/other">
@@ -42,8 +47,13 @@
                 android:title="@string/feedback" />
 
             <item
+                android:id="@+id/version"
+                android:icon="@drawable/ic_baseline_apps_24"
+                android:title="@string/version" />
+
+            <item
                 android:id="@+id/about"
-                android:icon="@drawable/ic_baseline_info_24"
+                android:icon="@drawable/ic_baseline_developer_mode_24"
                 android:title="@string/about" />
 
         </menu>

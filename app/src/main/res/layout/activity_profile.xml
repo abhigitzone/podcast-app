@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/cover_img" />
+        android:src="@drawable/background" />
 
     <ImageView
         android:id="@+id/backBtn"
@@ -19,7 +19,8 @@
         android:layout_height="@dimen/dp_30"
         android:layout_marginStart="@dimen/dp_10"
         android:layout_marginTop="@dimen/dp_40"
-        android:alpha="0.35"
+        android:alpha="0.8"
+        android:background="@android:color/transparent"
         android:src="@drawable/previous" />
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -30,7 +31,7 @@
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="-25dp"
         android:src="@drawable/default_profile_img"
-        app:civ_border_color="@color/colorAccent"
+        app:civ_border_color="@color/colorWhite"
         app:civ_border_width="3dp" />
 
     <TextView
@@ -41,7 +42,7 @@
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_4"
         android:fontFamily="@font/google_sans_bold"
-        android:text="Abhishek Raj"
+        android:text="@string/john_doe"
         android:textColor="@color/black"
         android:textSize="@dimen/sp_22"
         android:textStyle="bold" />
@@ -54,7 +55,7 @@
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_4"
         android:text="@string/accountEmail"
-        android:textColor="@color/grey"
+        android:textColor="@color/dark_grey"
         android:textSize="@dimen/sp_16" />
 
     <TextView
@@ -79,11 +80,10 @@
 
         <TextView
             android:id="@+id/accountLocation"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_12"
             android:layout_marginTop="@dimen/dp_4"
-            android:layout_weight="1"
             android:drawablePadding="@dimen/dp_4"
             android:ellipsize="end"
             android:maxLines="1"
@@ -94,16 +94,16 @@
 
         <TextView
             android:id="@+id/accountDOB"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/dp_12"
             android:layout_marginTop="@dimen/dp_4"
-            android:layout_weight="1"
             android:drawablePadding="@dimen/dp_4"
+            android:gravity="bottom"
             android:text="@string/dob"
             android:textColor="@color/black"
             android:textSize="@dimen/sp_16"
-            app:drawableStartCompat="@drawable/ic_baseline_child_care_24" />
+            app:drawableStartCompat="@drawable/ic_baseline_cake_24" />
 
     </LinearLayout>
 
@@ -120,7 +120,7 @@
         android:maxLines="2"
         android:text="@string/website"
         android:textColor="@color/black"
-        android:textColorLink="@color/button"
+        android:textColorLink="@color/green"
         android:textSize="@dimen/sp_16"
         app:drawableStartCompat="@drawable/ic_baseline_language_24" />
 
@@ -132,7 +132,7 @@
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="@dimen/dp_8"
         android:layout_marginEnd="@dimen/dp_12"
-        android:background="@color/grey" />
+        android:background="#ff7171" />
 
     <Button
         android:id="@+id/accountEdit"
@@ -144,7 +144,7 @@
         android:background="@drawable/button_transparent"
         android:text="@string/edit_profile"
         android:textAllCaps="false"
-        android:textColor="@color/button"
+        android:textColor="@color/green"
         android:textStyle="bold" />
 
     <Button
@@ -153,9 +153,156 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/dp_70"
+        android:layout_marginBottom="@dimen/dp_50"
         android:background="@drawable/button"
         android:text="@string/logout"
         android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/engagementTXT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/view"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_4"
+        android:fontFamily="@font/google_sans_bold"
+        android:text="@string/your_engagement"
+        android:textColor="@color/green" />
+
+    <LinearLayout
+        android:id="@+id/cardContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/engagementTXT"
+        android:layout_margin="@dimen/dp_12"
+        android:orientation="horizontal">
+
+        <!-- Video upload -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/ly_zero"
+            android:layout_height="@dimen/dp_120"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:layout_weight="1"
+            android:background="@android:color/transparent"
+            android:elevation="@dimen/dp_8"
+            app:cardBackgroundColor="@color/light_pink"
+            app:cardCornerRadius="@dimen/dp_8">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/uploadIcon"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_baseline_file_upload_24" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/uploadIcon"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cardVideoUpload"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_4"
+                        android:fontFamily="@font/google_sans_bold"
+                        android:text="@string/zero"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/cardTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/google_sans_bold"
+                        android:text="@string/upload"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- Likes on Video -->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/ly_zero"
+            android:layout_height="@dimen/dp_120"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginBottom="@dimen/dp_4"
+            android:layout_weight="1"
+            android:elevation="@dimen/dp_8"
+            app:cardBackgroundColor="@color/light_yellow"
+            app:cardCornerRadius="@dimen/dp_8">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/cardHeart"
+                    android:layout_width="@dimen/dp_40"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_centerInParent="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/heart_on" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cardHeart"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/cardLikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_4"
+                        android:fontFamily="@font/google_sans_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/zero"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/likesTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/google_sans_bold"
+                        android:gravity="center_vertical"
+                        android:text="@string/_0_likes"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/profileVisibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardContainer"
+        android:layout_marginStart="@dimen/dp_12"
+        android:layout_marginTop="@dimen/dp_12"
+        android:text="Make Profile Visible" />
 
 </RelativeLayout>

@@ -11,7 +11,7 @@
     <string name="share">Share</string>
     <string name="change_language">Language</string>
     <string name="feedback">Feedback</string>
-    <string name="about">About</string>
+    <string name="about">Know Your Developer</string>
     <string name="Navigation_drawer_open">Open Navigation Drawer</string>
     <string name="Navigation_drawer_close">Close Navigation Drawer</string>
     <string name="login">Login</string>
@@ -25,9 +25,9 @@
     <string name="register_now">Register now</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
-    <string name="privacy_policy">By clicking register you agree to our privacy policy</string>
+    <string name="privacy_policy">Please tap to accept our privacy policy</string>
     <string name="email">Email address</string>
-    <string name="emailLinkVerr">Email verification sent. Kindly check</string>
+    <string name="emailLinkVerr">Verification email sent. Kindly check</string>
     <string name="privacyErr">Kindly accept our policy</string>
     <string name="passMisMatched">Password mismatched</string>
     <string name="mandatory">Mandatory field</string>
@@ -42,7 +42,7 @@
     <string name="studio">Studio</string>
     <string name="open_album">Open Album</string>
     <string name="sample_bio">Welcome to Podcast. Kindly update Bio.</string>
-    <string name="accountEmail">podcastdevteam@gmail.com</string>
+    <string name="accountEmail">doe.john@email.com</string>
     <string name="edit_profile">Edit profile</string>
     <string name="save">Save</string>
     <string name="name">Name</string>
@@ -50,4 +50,34 @@
     <string name="location">Location</string>
     <string name="website">Website</string>
     <string name="dob">Date of Birth</string>
+    <string name="review_video">Review Video</string>
+    <string name="choose_video">Choose Video</string>
+    <string name="publish_video">Publish Video</string>
+    <string name="video_title">Video Title</string>
+    <string name="videoDesc">Video Description</string>
+    <string name="choose_by_genres">Choose by Genres</string>
+    <string name="message">Community Chat</string>
+    <string name="version">Version</string>
+    <string name="emptyMsgErr">Loading messages, please wait.. \nKindly keep the community clean.</string>
+    <string name="type_a_message">Type a message</string>
+    <string name="change_wallpaper">Change Wallpaper</string>
+    <string name="options">options</string>
+    <string name="john_doe">john Doe</string>
+    <string name="your_engagement">Your Engagement</string>
+    <string name="_0_likes">Likes Received</string>
+    <string name="upload">Video Uploaded</string>
+    <string name="zero">0</string>
+    <string name="abhishek_raj">Abhishek Raj</string>
+    <string name="forget">Forgot Your Password?</string>
+    <string name="descForget">Confirm your email and we\'ll send the \ninstructions.</string>
+    <string name="send_verification_now">Send Verification Now</string>
+    <string name="email_not_found">Sorry, the provided email is not registered!</string>
+    <string name="dev_bio_1">I\'m a hardworking final year computer science student currently working as
+        Programmer Analyst at Cognizant Technology Service and have a great passion to build Android Apps. I built
+        this Podcast app completely from scratch with my team in order to solve the issue faced by students in finding learning resource.
+        By using this app, It will help students in improvising their communication skills by sharing their knowledge with peers.
+        I hope this app will help students in many great ways.
+
+
+    </string>
 </resources>

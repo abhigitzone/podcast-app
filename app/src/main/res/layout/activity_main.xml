@@ -8,6 +8,7 @@
     tools:context=".MainActivity">
 
     <RelativeLayout
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +18,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:minHeight="?attr/actionBarSize"
-            app:elevation="@dimen/ly_zero"
+            app:elevation="@dimen/dp_4"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:titleTextColor="@android:color/black" />
 
@@ -46,6 +47,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:layout_marginEnd="@dimen/ly_40"
+        android:background="@color/colorPrimary"
         app:headerLayout="@layout/navigation_header"
         app:itemIconTint="@color/black"
         app:itemTextColor="@color/black"

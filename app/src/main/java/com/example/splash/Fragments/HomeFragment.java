@@ -82,7 +82,6 @@ public class HomeFragment extends Fragment {
         mImageUrls.add("https://api.time.com/wp-content/uploads/2019/02/american-fiasco-best-podcasts-2019.jpg?w=800&quality=85");
         mNames.add("American fiasco");
 
-
     }
 
 }

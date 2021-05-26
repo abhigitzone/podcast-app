@@ -99,31 +99,21 @@ public class FragmentRegister extends Fragment implements View.OnClickListener {
             privacyCheck.setError(getString(R.string.privacyErr));
             regProgressBar.setVisibility(View.INVISIBLE);
         } else {
-            mFirebaseAuth.createUserWithEmailAndPassword(emailReg, passReg).addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        mFirebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> task) {
-                                userID = mFirebaseAuth.getCurrentUser().getUid();  //getting the user id from authentication.
-                                DocumentReference documentReference = fStore.collection("users").document(userID);
-                                Map<String, Object> user = new HashMap<>();
-                                user.put("Fname", nameReg);
-                                user.put("email", emailReg); //Add more section as you want..
-                                documentReference.set(user).addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Log.d("TAG", "onSuccess: user profile is created for : " + userID);
-                                    }
-                                });
-                                Toast.makeText(getContext(), R.string.emailLinkVerr, Toast.LENGTH_SHORT).show();
-                                regProgressBar.setVisibility(View.INVISIBLE);
-                            }
-                        });
-                    } else {
-                        Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
+            mFirebaseAuth.createUserWithEmailAndPassword(emailReg, passReg).addOnCompleteListener(getActivity(), task -> {
+                if (task.isSuccessful()) {
+                    mFirebaseAuth.getCurrentUser().sendEmailVerification().addOnCompleteListener(task1 -> {
+                        userID = mFirebaseAuth.getCurrentUser().getUid();  //getting the user id from authentication.
+                        DocumentReference documentReference = fStore.collection("users").document(userID);
+                        Map<String, Object> user = new HashMap<>();
+                        user.put("Fname", nameReg);
+                        user.put("email", emailReg); //Add more section as you want..
+                        documentReference.set(user).addOnSuccessListener(aVoid ->
+                                Log.d("TAG", "onSuccess: user profile is created for : " + userID));
+                        Toast.makeText(getContext(), R.string.emailLinkVerr, Toast.LENGTH_SHORT).show();
+                        regProgressBar.setVisibility(View.INVISIBLE);
+                    });
+                } else {
+                    Toast.makeText(getContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 }
             });
         }

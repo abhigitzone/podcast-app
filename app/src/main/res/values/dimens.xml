@@ -29,4 +29,7 @@
     <dimen name="dp_10">10dp</dimen>
     <dimen name="dp_6">6dp</dimen>
     <dimen name="dp_25">25dp</dimen>
+    <dimen name="dp_45">45dp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="dp_26">26dp</dimen>
 </resources>

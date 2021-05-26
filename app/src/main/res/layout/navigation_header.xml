@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="170dp">
 
     <ImageView
+        android:id="@+id/NavCoverImg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha=".7"
         android:scaleType="centerCrop"
-        android:src="@color/dark_grey" />
+        android:src="@drawable/background" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/userImg"
-        android:layout_width="@dimen/dp_50"
-        android:layout_height="@dimen/dp_50"
-        android:layout_above="@id/userNm"
+        android:id="@+id/NavUserImg"
+        android:layout_width="@dimen/dp_70"
+        android:layout_height="@dimen/dp_70"
+        android:layout_centerVertical="true"
         android:layout_marginStart="@dimen/dp_8"
         android:layout_marginBottom="@dimen/dp_8"
         android:src="@drawable/default_profile_img" />
@@ -24,25 +26,33 @@
         android:id="@+id/userNmHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@id/NavUserImg"
         android:layout_marginStart="@dimen/dp_8"
-        android:layout_marginBottom="@dimen/dp_8"
         android:fontFamily="@font/google_sans_bold"
         android:text="@string/hello_there"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
+        android:textColor="@color/colorWhite" />
 
     <TextView
-        android:id="@+id/userNm"
+        android:id="@+id/NavUserName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/dp_8"
-        android:layout_marginBottom="@dimen/dp_8"
+        android:layout_below="@id/NavUserImg"
+        android:layout_marginStart="@dimen/dp_4"
         android:layout_toEndOf="@id/userNmHeader"
         android:fontFamily="@font/google_sans_bold"
-        android:text="User"
-        android:textColor="@android:color/black"
-        android:textStyle="bold" />
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        tools:text="User" />
+
+    <TextView
+        android:id="@+id/NavEmailId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/userNmHeader"
+        android:layout_marginStart="@dimen/dp_8"
+        android:textSize="@dimen/sp_12"
+        android:fontFamily="@font/google_sans_bold"
+        android:textColor="@color/colorPrimary"
+        tools:text="User email id" />
 
 </RelativeLayout>

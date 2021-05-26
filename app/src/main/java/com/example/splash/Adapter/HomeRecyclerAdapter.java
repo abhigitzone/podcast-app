@@ -38,7 +38,7 @@ public class HomeRecyclerAdapter extends RecyclerView.Adapter<HomeRecyclerAdapte
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
-        RequestOptions requestOptions = new RequestOptions().placeholder(R.drawable.ic_launcher_background);
+        RequestOptions requestOptions = new RequestOptions().placeholder(R.color.colorWhite);
         Glide.with(mContext).load(mUrls.get(position)).apply(requestOptions).into(holder.podImg);
 
         holder.podTitle.setText(mNames.get(position));

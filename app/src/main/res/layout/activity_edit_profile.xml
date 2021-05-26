@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_4"
         android:layout_below="@id/EditToolbar"
+        android:layout_marginTop="-2dp"
         android:indeterminate="true"
         android:indeterminateTint="@color/red"
         android:visibility="gone" />
@@ -33,7 +34,7 @@
         android:layout_below="@id/EditToolbar"
         android:alpha=".4"
         android:scaleType="centerCrop"
-        android:src="@drawable/cover_img" />
+        android:src="@drawable/background" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/EditProfileImg"
@@ -42,8 +43,8 @@
         android:layout_below="@id/chooseCoverImg"
         android:layout_marginStart="@dimen/dp_12"
         android:layout_marginTop="-25dp"
-        android:src="@drawable/ic_baseline_account_circle_24"
-        app:civ_border_color="@color/colorAccent"
+        android:src="@drawable/default_profile_img"
+        app:civ_border_color="@color/colorWhite"
         app:civ_border_width="3dp" />
 
     <!--Bio container-->

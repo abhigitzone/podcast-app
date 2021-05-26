@@ -7,6 +7,6 @@
         android:startColor="@android:color/transparent" />
     <stroke
         android:width="2dp"
-        android:color="@color/button" />
+        android:color="@color/green" />
 
 </shape>

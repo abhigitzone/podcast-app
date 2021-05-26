@@ -1,49 +1,69 @@
 package com.example.splash;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.splash.Authentication.AuthHome;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
+import com.example.splash.Model.ChatData;
+import com.example.splash.Model.ProfileVisibleData;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
+
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.ListenerRegistration;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-//TODO: This class will read the respective data from Firebase FireStore and set it to textView and imageView respectively.
+//This class will read the respective data from Firebase FireStore and set it to textView and imageView respectively.
 public class AccountProfile extends AppCompatActivity {
     Button logout;
     CircleImageView profileImage;
     ImageView profileCoverIMG;
-    FirebaseAuth mFirebaseAuth;
+    SwitchMaterial profileVisible;
     //User interface instances..
     Button accountEdit;
     ImageView backBtn;
     TextView accName, accBio, accEmail, accLoc, accWeb, accDOB;
 
     //Firebase Instances..
+    FirebaseAuth mFirebaseAuth;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
     String userId = firebaseUser.getUid();
     DocumentReference documentReference = db.collection("Edit User Details").document(userId);
     DocumentReference dcRef = db.collection("users").document(userId);
-    private ListenerRegistration listenerRegistration, lRegister;
+    DocumentReference documentCoverRef = db.collection("Edit Cover Image").document(userId);
+    //For Profile visibility..TODO://Make activity for view Profile of other users..
+    DocumentReference documentUserID = db.collection("USER ID").document(userId);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +78,7 @@ public class AccountProfile extends AppCompatActivity {
         accWeb = findViewById(R.id.accountWebsite);
         accDOB = findViewById(R.id.accountDOB);
         profileImage = findViewById(R.id.profileImg);
+        profileVisible = findViewById(R.id.profileVisibility);
         profileCoverIMG = findViewById(R.id.profileCoverImg);
 
         //Handling back pressed..
@@ -65,6 +86,7 @@ public class AccountProfile extends AppCompatActivity {
         backBtn.setOnClickListener(v -> {
             onBackPressed();
         });
+
         //Handling Edit button..
         accountEdit = findViewById(R.id.accountEdit);
         accountEdit.setOnClickListener(v -> {
@@ -83,17 +105,19 @@ public class AccountProfile extends AppCompatActivity {
             Toast.makeText(this, "Logout successfully", Toast.LENGTH_SHORT).show();
         });
 
+        //Handling profile visible switch button
+        profileVisibleSwitch();
     }
 
     //It will automatically read the data from fireStore and display it to user.
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onStart() {
         super.onStart();
         //Read data that updated from edit profile
-        listenerRegistration = documentReference.addSnapshotListener((documentSnapshot, error) -> {
+        documentReference.addSnapshotListener(this, (documentSnapshot, error) -> {
             if (error != null) {
                 Log.e("AccountProfile", "error" + error.getMessage());
-                Toast.makeText(this, "Reason: " + error.getMessage(), Toast.LENGTH_SHORT).show();
                 return;
             }
             assert documentSnapshot != null;
@@ -103,25 +127,23 @@ public class AccountProfile extends AppCompatActivity {
                 String bio = documentSnapshot.getString("Bio");
                 String location = documentSnapshot.getString("Location");
                 String website = documentSnapshot.getString("Website");
-                String imageUri = documentSnapshot.getString("url");
+                String imageUri = documentSnapshot.getString("imageUrl");
                 accDOB.setText(dob);
                 accBio.setText(bio);
                 accLoc.setText(location);
-                Glide.with(this).load(imageUri).into(profileCoverIMG); //set cover Image
                 Glide.with(this).load(imageUri).into(profileImage); //set profile Image
                 if (!website.isEmpty()) {
                     accWeb.setText(website);
                 } else {
                     accWeb.setText("Not available");
                 }
-                //TODO: Update profileCoverIMG also here..
             }
         });
 
-        //Read data from register page..
-        lRegister = dcRef.addSnapshotListener((documentSnapshot, error) -> {
+        //Read data from registration page..Name and Email..
+        dcRef.addSnapshotListener(this, (documentSnapshot, error) -> {
             if (error != null) {
-                Toast.makeText(this, "Error while loading!!", Toast.LENGTH_SHORT).show();
+                Log.e("AccountProfile", "error" + error.getMessage());
                 return;
             }
             if (documentSnapshot.exists()) {
@@ -132,13 +154,30 @@ public class AccountProfile extends AppCompatActivity {
                 accName.setText(name);
             }
         });
+
+        //Read cover image from FireStore
+        documentCoverRef.addSnapshotListener(this, (documentSnapshot, error) -> {
+            if (error != null) {
+                Log.e("AccountProfile", "error" + error.getMessage());
+                return;
+            }
+            if (documentSnapshot.exists()) {
+                //Exist..
+                String coverUri = documentSnapshot.getString("coverUrl");
+                Glide.with(this).load(coverUri).into(profileCoverIMG); //Set cover image
+            }
+        });
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        listenerRegistration.remove();
-        lRegister.remove();
+    //Switch button methods..
+    public void profileVisibleSwitch() {
+        profileVisible.setTextColor(getResources().getColor(R.color.light_yellow));
+        profileVisible.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            Map<String, Object> user = new HashMap<>();
+            user.put("userId", userId);
+            documentUserID.set(user).addOnSuccessListener(unused -> //Write into Firestore
+                    Toast.makeText(AccountProfile.this, "Profile is visible", Toast.LENGTH_SHORT).show());
+        });
     }
 
     //Handling back button..
@@ -147,4 +186,5 @@ public class AccountProfile extends AppCompatActivity {
         super.onBackPressed();
         overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
+
 }

@@ -10,12 +10,12 @@
     <FrameLayout
         android:id="@+id/frame"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_180" />
+        android:layout_height="@dimen/dp_220" />
 
     <com.denzcoskun.imageslider.ImageSlider
         android:id="@+id/imageSlider"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_220"
+        android:layout_height="@dimen/dp_250"
         app:auto_cycle="true"
         app:corner_radius="12"
         app:delay="0"
@@ -34,7 +34,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:tabGravity="fill"
-            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabIndicatorColor="@color/green"
             app:tabTextColor="@android:color/black" />
 
         <androidx.viewpager.widget.ViewPager
@@ -44,4 +44,5 @@
             android:layout_below="@id/tabLayout_id" />
 
     </RelativeLayout>
+
 </RelativeLayout>
